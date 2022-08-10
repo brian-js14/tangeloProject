@@ -13,6 +13,7 @@ describe("Login page", function () {
     cy.get("button").contains("Ok").click();
     cy.get('[value="Adults (18+)"]').click();
     cy.get("li").eq(3).click();
+    //validación de los valores ingresados
     cy.get("input").eq(2).should("have.value", 2);
     cy.get('[value="Children (0-7)"]').click();
     cy.get("li").eq(7).click();
