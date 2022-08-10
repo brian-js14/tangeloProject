@@ -13,7 +13,11 @@ Nota: Se definen variables de entorno {{HOST}} en la colección con el host de l
 3. En el punto 3 se realizaron 2 test independientes para los flujos de login y búsqueda de un viaje
    y en el del checkout se realizó con los 2 flujos anteriores, desde el login hasta crear la orden
    los archivo se encuentran en las siguientes rutas:
+
    - /home/brian/tangeloProject/cypress_ui/cypress/integration/3-tangelo-test/
+
      -checkout.cy.js
+
      -filterAndSearchPlaces.cy.js
+
      -login.cy.js
