@@ -46,15 +46,23 @@ describe("Checkout - processs e2e - Login/Select/Checkout", function () {
 Ingresando al checkout:
 */
     cy.get("form").within(() => {
-      cy.get("input").first().type("BrianQA");
-      cy.get("input").eq(1).type("brian@testing.com");
-      cy.get("input").eq(2).type("416-82-1269");
-      cy.get("input").eq(3).type(300000000);
+      cy.get("input").first().type("Brian");
+      cy.get("input").eq(1).type("testing@qa.com");
+      cy.get("input").eq(2).type("272-46-2011");
+      cy.get("input").eq(3).type("(419) 555-0084");
     });
     cy.wait(1000);
-    cy.get('[name="promo"]').type("TEST123");
+    cy.get('[name="promo"]').type("TEST12");
+    /*
+    se omite la excepción generada por el sitio web con el uncaught
+    en valor en false, la excepción se genera al enviar el valor en el campo
+    phone number de tipo tel, al generarse esta excepción el botón "pay now"
+    no se activa y por ende no se envía la solicitud
+    */
     cy.once("uncaught:exception", () => false);
     cy.get("button").contains("Apply").click();
     cy.get(".theme__check___2B20W").click();
+    cy.wait(2000);
+    cy.get("button").contains("Pay now");
   });
 });
