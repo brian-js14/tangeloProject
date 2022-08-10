@@ -25,4 +25,5 @@ Nota: Se definen variables de entorno {{HOST}} en la colección con el host de l
 Links consultados:
 
 https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
+
 https://docs.cypress.io/guides/references/assertions
